@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CategoryComponent } from './components/category/category.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     DashboardComponent,
     NavbarComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

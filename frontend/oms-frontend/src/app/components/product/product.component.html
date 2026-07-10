@@ -1,0 +1,91 @@
+<div style="width:900px;margin:auto;">
+
+<h2>Product Management</h2>
+
+<input [(ngModel)]="product.productName" placeholder="Product Name">
+
+<br><br>
+
+<input [(ngModel)]="product.description" placeholder="Description">
+
+<br><br>
+
+<input type="number" [(ngModel)]="product.price" placeholder="Price">
+
+<br><br>
+
+<input type="number" [(ngModel)]="product.gst" placeholder="GST">
+
+<br><br>
+
+<input type="number" [(ngModel)]="product.stock" placeholder="Stock">
+
+<br><br>
+
+<select [(ngModel)]="product.category.id">
+
+<option [ngValue]="0">Select Category</option>
+
+<option *ngFor="let c of categories" [ngValue]="c.id">
+
+{{c.categoryName}}
+
+</option>
+
+</select>
+
+<br><br>
+
+<button (click)="saveProduct()">
+
+Save Product
+
+</button>
+
+<hr>
+
+<table border="1" width="100%">
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Price</th>
+
+<th>Stock</th>
+
+<th>Category</th>
+
+<th>Action</th>
+
+</tr>
+
+<tr *ngFor="let p of products">
+
+<td>{{p.id}}</td>
+
+<td>{{p.productName}}</td>
+
+<td>{{p.price}}</td>
+
+<td>{{p.stock}}</td>
+
+<td>{{p.category?.categoryName}}</td>
+
+<td>
+
+<button (click)="deleteProduct(p.id)">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>

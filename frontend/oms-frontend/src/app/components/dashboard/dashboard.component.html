@@ -1,1 +1,59 @@
-<p>dashboard works!</p>
+<h1 style="text-align:center">
+Online Product Order Management System
+</h1>
+
+<div class="cards">
+
+    <mat-card class="card">
+
+        <h2>{{dashboard.totalCategories}}</h2>
+
+        <p>Total Categories</p>
+
+    </mat-card>
+
+    <mat-card class="card">
+
+        <h2>{{dashboard.totalProducts}}</h2>
+
+        <p>Total Products</p>
+
+    </mat-card>
+
+    <mat-card class="card">
+
+        <h2>0</h2>
+
+        <p>Total Customers</p>
+
+    </mat-card>
+
+    <mat-card class="card">
+
+        <h2>0</h2>
+
+        <p>Total Orders</p>
+
+    </mat-card>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+
+<button mat-raised-button color="primary" routerLink="/category">
+
+Category
+
+</button>
+
+&nbsp;
+
+<button mat-raised-button color="accent" routerLink="/product">
+
+Product
+
+</button>
+
+</div>
