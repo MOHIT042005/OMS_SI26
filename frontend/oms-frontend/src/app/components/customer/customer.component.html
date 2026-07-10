@@ -1,0 +1,60 @@
+<div style="width:900px;margin:auto;">
+
+<h2>Customer Management</h2>
+
+<input [(ngModel)]="customer.name" placeholder="Name">
+
+<br><br>
+
+<input [(ngModel)]="customer.email" placeholder="Email">
+
+<br><br>
+
+<input [(ngModel)]="customer.phone" placeholder="Phone">
+
+<br><br>
+
+<input [(ngModel)]="customer.address" placeholder="Address">
+
+<br><br>
+
+<button (click)="saveCustomer()">
+
+Save Customer
+
+</button>
+
+<hr>
+
+<table border="1" width="100%">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Address</th>
+<th>Action</th>
+</tr>
+
+<tr *ngFor="let c of customers">
+
+<td>{{c.id}}</td>
+<td>{{c.name}}</td>
+<td>{{c.email}}</td>
+<td>{{c.phone}}</td>
+<td>{{c.address}}</td>
+
+<td>
+
+<button (click)="deleteCustomer(c.id)">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>

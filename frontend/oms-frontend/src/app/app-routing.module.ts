@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CategoryComponent } from './components/category/category.component'
 import { ProductComponent } from './components/product/product.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'product',
     component: ProductComponent
+  },
+  {
+    path: 'customer',
+    component: CustomerComponent
   },
   {
     path: '**',
