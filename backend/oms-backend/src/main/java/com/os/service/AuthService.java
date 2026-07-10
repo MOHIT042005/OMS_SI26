@@ -7,6 +7,9 @@ import com.os.enums.Role;
 import com.os.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.os.dto.LoginRequest;
+import java.util.Optional;
+
 
 @Service
 public class AuthService {
@@ -37,4 +40,21 @@ public class AuthService {
 
         return new AuthResponse("Registration Successful");
     }
+
+    public AuthResponse login(LoginRequest request) {
+
+    Optional<User> optionalUser = userRepository.findByEmail(request.getEmail());
+
+    if (optionalUser.isEmpty()) {
+        return new AuthResponse("Invalid Email or Password");
+    }
+
+    User user = optionalUser.get();
+
+    if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        return new AuthResponse("Invalid Email or Password");
+    }
+
+    return new AuthResponse("Login Successful");
+}
 }

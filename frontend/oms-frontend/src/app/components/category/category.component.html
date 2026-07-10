@@ -1,48 +1,61 @@
-<div style="width:600px;margin:40px auto;">
+<app-navbar></app-navbar>
 
-<h2>Category Management</h2>
+<div class="crud-container">
 
-<button routerLink="/product">
-    Product Module
-</button>
+    <h2>Category Management</h2>
 
-<br><br>
+    <div class="form-section">
 
-<input
-type="text"
-[(ngModel)]="categoryName"
-placeholder="Enter Category Name">
+        <label>Category Name</label>
 
-<button (click)="addCategory()">
-Add Category
-</button>
+        <input
+        type="text"
+        [(ngModel)]="categoryName"
+        placeholder="Enter Category Name">
 
-<hr>
+        <button (click)="addCategory()">
+            Save Category
+        </button>
 
-<table border="1" width="100%">
+    </div>
 
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Action</th>
-</tr>
+    <table>
 
-<tr *ngFor="let c of categories">
+        <thead>
 
-<td>{{c.id}}</td>
+        <tr>
 
-<td>{{c.categoryName}}</td>
+            <th>ID</th>
 
-<td>
+            <th>Category Name</th>
 
-<button (click)="deleteCategory(c.id)">
-Delete
-</button>
+            <th>Delete</th>
 
-</td>
+        </tr>
 
-</tr>
+        </thead>
 
-</table>
+        <tbody>
+
+        <tr *ngFor="let c of categories">
+
+            <td>{{c.id}}</td>
+
+            <td>{{c.categoryName}}</td>
+
+            <td>
+
+                <button class="delete-btn"
+                (click)="deleteCategory(c.id)">
+                    Delete
+                </button>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
 
 </div>

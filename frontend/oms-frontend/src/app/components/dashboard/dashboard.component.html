@@ -1,63 +1,55 @@
-<h1 style="text-align:center">
-Online Product Order Management System
-</h1>
+<app-navbar></app-navbar>
 
-<div class="cards">
+<div class="dashboard-container">
 
-    <mat-card class="card">
+    <h1>Online Order Management System</h1>
 
-        <h2>{{dashboard.totalCategories}}</h2>
+    <p class="subtitle">
+        Welcome to your Admin Dashboard
+    </p>
 
-        <p>Total Categories</p>
+    <div class="cards">
 
-    </mat-card>
+        <div class="card">
+            <div class="number">{{dashboard.totalProducts}}</div>
+            <div class="title">Products</div>
+        </div>
 
-    <mat-card class="card">
+        <div class="card">
+            <div class="number">{{dashboard.totalCategories}}</div>
+            <div class="title">Categories</div>
+        </div>
 
-        <h2>{{dashboard.totalProducts}}</h2>
+        <div class="card">
+            <div class="number">{{dashboard.totalCustomers}}</div>
+            <div class="title">Customers</div>
+        </div>
 
-        <p>Total Products</p>
+        <div class="card">
+            <div class="number">{{dashboard.totalOrders}}</div>
+            <div class="title">Orders</div>
+        </div>
 
-    </mat-card>
+    </div>
 
-    <mat-card class="card">
+    <div class="quick-actions">
 
-        <h2>0</h2>
+        <button routerLink="/category">
+            Categories
+        </button>
 
-        <p>Total Customers</p>
+        <button routerLink="/product">
+            Products
+        </button>
 
-    </mat-card>
+        <button routerLink="/customer">
+            Customers
+        </button>
 
-    <mat-card class="card">
+        <button routerLink="/order">
+            Orders
+        </button>
 
-        <h2>0</h2>
-
-        <p>Total Orders</p>
-
-    </mat-card>
-
-</div>
-
-<br>
-
-<div style="text-align:center">
-
-<button mat-raised-button color="primary" routerLink="/category">
-
-Category
-
-</button>
-
-&nbsp;
-
-<button mat-raised-button color="accent" routerLink="/product">
-
-Product
-
-</button>
-
-<button mat-raised-button color="warn" routerLink="/customer">
-Customer
-</button>
+    </div>
 
 </div>

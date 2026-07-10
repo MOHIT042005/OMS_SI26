@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CategoryComponent } from './components/category/category.component'
 import { ProductComponent } from './components/product/product.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './components/order/order.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'customer',
     component: CustomerComponent
+  },
+  {
+  path:'order',
+  component:OrderComponent
   },
   {
     path: '**',

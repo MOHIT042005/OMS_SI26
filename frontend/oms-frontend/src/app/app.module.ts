@@ -23,6 +23,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './components/product/product.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CustomerComponent } from './components/customer/customer.component';
     NavbarComponent,
     CategoryComponent,
     ProductComponent,
-    CustomerComponent
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

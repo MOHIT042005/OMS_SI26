@@ -1,91 +1,122 @@
-<div style="width:900px;margin:auto;">
+<app-navbar></app-navbar>
 
-<h2>Product Management</h2>
+<div class="crud-container">
 
-<input [(ngModel)]="product.productName" placeholder="Product Name">
+    <h2>Product Management</h2>
+    <p class="subtitle">
+Manage all products available in the inventory.
+</p>
 
-<br><br>
+    <div class="form-section">
 
-<input [(ngModel)]="product.description" placeholder="Description">
+        <label>Product Name</label>
+        <input
+            type="text"
+            [(ngModel)]="product.productName"
+            placeholder="Enter Product Name">
 
-<br><br>
+        <label>Description</label>
+        <input
+            type="text"
+            [(ngModel)]="product.description"
+            placeholder="Enter Description">
 
-<input type="number" [(ngModel)]="product.price" placeholder="Price">
+        <label>Price</label>
+        <input
+            type="number"
+            [(ngModel)]="product.price"
+            placeholder="Enter Price">
 
-<br><br>
+        <label>GST (%)</label>
+        <input
+            type="number"
+            [(ngModel)]="product.gst"
+            placeholder="Enter GST">
 
-<input type="number" [(ngModel)]="product.gst" placeholder="GST">
+        <label>Stock</label>
+        <input
+            type="number"
+            [(ngModel)]="product.stock"
+            placeholder="Enter Stock">
 
-<br><br>
+        <label>Category</label>
 
-<input type="number" [(ngModel)]="product.stock" placeholder="Stock">
+        <select [(ngModel)]="product.category.id">
 
-<br><br>
+            <option [ngValue]="0">
+                Select Category
+            </option>
 
-<select [(ngModel)]="product.category.id">
+            <option
+                *ngFor="let c of categories"
+                [ngValue]="c.id">
 
-<option [ngValue]="0">Select Category</option>
+                {{c.categoryName}}
 
-<option *ngFor="let c of categories" [ngValue]="c.id">
+            </option>
 
-{{c.categoryName}}
+        </select>
 
-</option>
+        <button (click)="saveProduct()">
+            Save Product
+        </button>
 
-</select>
+    </div>
 
-<br><br>
+    <table>
 
-<button (click)="saveProduct()">
+        <thead>
 
-Save Product
+        <tr>
 
-</button>
+            <th>ID</th>
 
-<hr>
+            <th>Name</th>
 
-<table border="1" width="100%">
+            <th>Price</th>
 
-<tr>
+            <th>GST</th>
 
-<th>ID</th>
+            <th>Stock</th>
 
-<th>Name</th>
+            <th>Category</th>
 
-<th>Price</th>
+            <th>Delete</th>
 
-<th>Stock</th>
+        </tr>
 
-<th>Category</th>
+        </thead>
 
-<th>Action</th>
+        <tbody>
 
-</tr>
+        <tr *ngFor="let p of products">
 
-<tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
 
-<td>{{p.id}}</td>
+            <td>{{p.productName}}</td>
 
-<td>{{p.productName}}</td>
+            <td>₹ {{p.price}}</td>
 
-<td>{{p.price}}</td>
+            <td>{{p.gst}}%</td>
 
-<td>{{p.stock}}</td>
+            <td>{{p.stock}}</td>
 
-<td>{{p.category?.categoryName}}</td>
+            <td>{{p.category?.categoryName}}</td>
 
-<td>
+            <td>
 
-<button (click)="deleteProduct(p.id)">
+                <button
+                    class="delete-btn"
+                    (click)="deleteProduct(p.id)">
+                    Delete
+                </button>
 
-Delete
+            </td>
 
-</button>
+        </tr>
 
-</td>
+        </tbody>
 
-</tr>
-
-</table>
+    </table>
 
 </div>

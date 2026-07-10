@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+
+<div class="crud-container">
+
+    <h2>Order Management</h2>
+
+    <p class="subtitle">
+        Manage customer orders.
+    </p>
+
+    <div class="form-section">
+
+        <label>Customer</label>
+
+        <select [(ngModel)]="order.customer.id">
+
+            <option [ngValue]="0">Select Customer</option>
+
+            <option *ngFor="let c of customers" [ngValue]="c.id">
+                {{c.name}}
+            </option>
+
+        </select>
+
+        <label>Product</label>
+
+        <select [(ngModel)]="order.product.id">
+
+            <option [ngValue]="0">Select Product</option>
+
+            <option *ngFor="let p of products" [ngValue]="p.id">
+                {{p.productName}}
+            </option>
+
+        </select>
+
+        <label>Quantity</label>
+
+        <input
+            type="number"
+            [(ngModel)]="order.quantity">
+
+        <button (click)="saveOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Delete</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let o of orders">
+
+                <td>{{o.id}}</td>
+
+                <td>{{o.customer?.name}}</td>
+
+                <td>{{o.product?.productName}}</td>
+
+                <td>{{o.quantity}}</td>
+
+                <td>
+
+                    <button
+                        class="delete-btn"
+                        (click)="deleteOrder(o.id)">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
