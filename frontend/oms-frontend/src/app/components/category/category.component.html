@@ -1,0 +1,42 @@
+<div style="width:600px;margin:40px auto;">
+
+<h2>Category Management</h2>
+
+<input
+type="text"
+[(ngModel)]="categoryName"
+placeholder="Enter Category Name">
+
+<button (click)="addCategory()">
+Add Category
+</button>
+
+<hr>
+
+<table border="1" width="100%">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Action</th>
+</tr>
+
+<tr *ngFor="let c of categories">
+
+<td>{{c.id}}</td>
+
+<td>{{c.categoryName}}</td>
+
+<td>
+
+<button (click)="deleteCategory(c.id)">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>

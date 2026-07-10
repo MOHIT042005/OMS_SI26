@@ -19,6 +19,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { MatButtonModule } from '@angular/material/button';
+import { CategoryComponent } from './components/category/category.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MatButtonModule } from '@angular/material/button';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
